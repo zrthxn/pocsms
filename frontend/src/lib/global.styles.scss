@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+@import './variables.styles.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:  $fontBody;
+  font-display: swap;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  color: #0c0c0c;
+  background-color: $colorBackground;
+  background-attachment: fixed;
+  *::selection {
+    color: black;
+    background-color: $colorAccent;
+  }
+}
+
+
+// Typography
+h1, h2, h3 {
+  font-family: $fontHeading;
+  font-size: 4em;
+  color: black;
+
+  line-height: 1em;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+
+  &[class~="regular"] {
+    font-family: $fontHeading;
+    color: black;
+    font-weight: 400;
+  }
+
+  &[class~="light"] {
+    font-weight: 200;
+  }
+  
+  &:first-child {
+    margin-top: 0;
+  }
+}
+h1 {
+  letter-spacing: -0.5mm;
+}
+
+h2 {
+  font-family: $fontHeading;
+  font-size: 2em;
+  color: $colorAccent;
+}
+h1 + h2 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-family: $fontSubHeading;
+  font-size: 1.5em;
+  color: #252525;
+}
+
+p {
+  font-family: $fontBody;
+  margin: 0.5em 0 1.5em 0;
+  letter-spacing: -1px;
+}
+
+code {
+  font-family: monospace;
+  border-radius: 5px;
+
+  // Fallback for non-lang code
+  color: #c9d1d9;
+  background: #121212;
+  padding: 2px 5px;
+}
+
+blockquote {
+  color: gray;
+  margin-left: 2px;
+  padding-left: 1.25em;
+  border-left: 5px solid gray;
+}
+
+a {
+  color: $colorAccent;
+  text-decoration: none;
+  font-weight: bolder;
+  position: relative;
+
+  // Remove blue highlight in mobile
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+  &::after {
+    transition: all 0.25s ease;
+
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -10;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 8px;
+    background-color: #e97e9c25;
+  }
+
+  &:hover, &:active {
+    color: #c4174b;
+    &::after {
+      height: 3px;
+      background-color: #c4174bbb;
+    }
+  }
+
+  &[class~="plain"] {
+    color: unset !important;
+
+    &::after {
+      display: none !important;
+    }
+  }
+}
+
+.mono {
+  font-family: $fontBody;
+}
+
+.center {
+  text-align: center;
+}
+
+input[type=text], input[type=password],
+input[type=email], input[type=tel] {
+  display: block;
+  margin: 1em 0;
+  padding: 1em;
+  font-family: $fontBody;
+  font-size: 1em;
+  color: #000;
+  width: 100%;
+  border: 3px solid #5a5a5a;
+  background: transparent;
+  transition: ease 0.25s;
+
+  &:active, &:focus {
+    outline: none;
+    border-color: #969696;
+  } 
+
+  &[class~="full-width"] {
+    width: 100%;
+  }
+
+  &[class~="transparent"] {
+    border: none;
+    padding: 1em 0;
+  }
+}
+
+button {
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  max-height: min-content;
+  font-size: 0.9em;
+  font-family: $fontHeading;
+  background-color: $colorAccent;
+  color: #eee;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &[class~="full-width"] {
+    width: 100%;
+    margin: 0;
+  }
+
+  &[class~="secondary"] {
+    background: #707070;
+  }
+
+  &[class~="outline"] {
+    background: transparent;
+    border: 2px solid $colorAccent;
+    color: $colorAccent;
+  }
+
+  &[class~="text"] {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: $colorAccent;
+  }
+
+  &[class~="small"] {
+    padding: 0.4em 0.8em;
+    margin: 0.5em;
+    font-size: 0.75em;
+  }
+
+  &[class~="large"] {
+    padding: 1em 3em;
+    margin: 0.5em;
+    font-size: 1em;
+  }
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &:hover {
+    filter: brightness(0.8);
+    transition: filter 0.1s ease;
+  }
+}
+
+.card {
+  padding: 1em;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  background: white;
+  box-shadow: 2px 2px 2px gray;
+  position: relative;
+}

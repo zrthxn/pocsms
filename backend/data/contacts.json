@@ -1,0 +1,39 @@
+{
+  "contacts": [
+    {
+      "id": "0",
+      "firstname": "SELF",
+      "lastname": "TEST",
+      "address": "Nowhere Town",
+      "phone": "+919971521167"
+    },
+    {
+      "id": "1",
+      "firstname": "Sattar",
+      "lastname": "Singh",
+      "address": "Nowhere Town",
+      "phone": "+917070707070"
+    },
+    {
+      "id": "2",
+      "firstname": "Ekhattar",
+      "lastname": "Singh",
+      "address": "Nowhere Town",
+      "phone": "+917171717171"
+    },
+    {
+      "id": "3",
+      "firstname": "Bahattar",
+      "lastname": "Singh",
+      "address": "Nowhere Town",
+      "phone": "+917272727272"
+    },
+    {
+      "id": "4",
+      "firstname": "PROD",
+      "lastname": "TEST",
+      "address": "Nowhere Town",
+      "phone": "+919810153260"
+    }
+  ]
+}
