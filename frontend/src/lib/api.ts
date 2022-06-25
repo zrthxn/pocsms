@@ -1,7 +1,8 @@
 import axios from 'axios'
+import { API_HOST } from '$lib/env'
 
 const request = axios.create({
-  baseURL: 'http://localhost:5000',
+  baseURL: API_HOST,
   timeout: 10000
 })
 
